@@ -26,8 +26,8 @@ To get started with Bei Poa, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/mtavya420/bei-poa.git`
 2. Navigate to the project directory: `cd bei-poa`
-3. Install dependencies: `Yarn`
-4. Start the application: `yarn dev`
+3. Install dependencies: `npm install`
+4. Start the application: `npm run dev`
 
 Make sure you have Node.js and npm installed on your machine before proceeding.
 
