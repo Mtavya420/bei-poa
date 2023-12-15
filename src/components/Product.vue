@@ -16,7 +16,7 @@
             <font-awesome-icon :icon="['fas', 'eye']" />
           </a>
         </div>
-        <img :src="product.imageUrl" :alt="product.name">
+        <img :src="product.image" :alt="product.name">
         <h3>{{ product.name }}</h3>
         <div class="stars">
           <!-- Render stars based on product.rating -->
@@ -34,64 +34,39 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent, onMounted, ref} from 'vue';
 import {Product} from "../assets/interfaces";
 import ShopViewModel from "../ViewModel/ShopViewModel.ts";
 
 export default defineComponent({
   name: 'Product',
-  data() {
-    return {
-      products: [
-        {
-          id: 1,
-          name: 'Galaxy s22-ultra 256GB',
-          discount: '-9%',
-          imageUrl: 'https://www.renderhub.com/madmix/samsung-galaxy-s22-ultra-burgundy/samsung-galaxy-s22-ultra-burgundy-01.jpg',
-          price: 'Tsh 2M',
-          originalPrice: 'Tsh 2.5M',
-          rating: 4.5
-        },
-        {
-          id: 2,
-          name: 'Galaxy Note 10+ 256GB',
-          discount: '-12%',
-          imageUrl: 'https://phonemart.ng/wp-content/uploads/2020/02/samsung-galaxy-note-10-plus-n975-dual-sim-256gb-black.jpg',
-          price: 'Tsh 850,000',
-          originalPrice: 'Tsh 980,000',
-          rating: 4.5
-        },
-        {
-          id: 3,
-          name: 'iPhone 12 Pro 128GB',
-          discount: '-8%',
-          imageUrl: 'https://assets.shpresa.al/shop/2020/10/121be795-cel1179-b.jpg',
-          price: 'Tsh 1,380,000',
-          originalPrice: 'Tsh 1,700,000',
-          rating: 4.5
-        },
-        // ... more products ...
-      ] as Product[]
-    };
-  },
-  props: {
-    product: Object as () => Product,
-  },
+
   setup() {
     const shopViewModel = ShopViewModel.getInstance();
+    const products = ref(shopViewModel.products);
+
     const addToCart = (product: Product) => {
       shopViewModel.addToCart(product);
     };
-
     const addProductLike = (product: Product) => {
       shopViewModel.addProductLike(product);
     };
 
+
+
+    onMounted(async () => {
+      await shopViewModel.loadProducts();
+      products.value = shopViewModel.products;
+    });
+
     return {
+      products,
       addToCart,
       addProductLike,
     };
   },
+
+
 });
 </script>
 

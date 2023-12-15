@@ -9,7 +9,7 @@ export interface Product  {
     name: string;
     price: string;
     originalPrice?: string;
-    imageUrl: string;
+    image: string;
     rating: number;
     like: boolean;
     quantity: number;
