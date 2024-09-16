@@ -16,7 +16,7 @@
             <font-awesome-icon :icon="['fas', 'eye']" />
           </a>
         </div>
-        <img :src="product.image" :alt="product.name">
+        <img :src="product.imageUrl" :alt="product.name">
         <h3>{{ product.name }}</h3>
         <div class="stars">
           <!-- Render stars based on product.rating -->
