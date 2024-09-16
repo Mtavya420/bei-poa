@@ -11,7 +11,7 @@
           <a href="#" class="btn">
             <font-awesome-icon :icon="['fab', 'twitter']" />
           </a>
-          <a href="#" class="btn">
+          <a href="https://www.instagram.com/beipoa_korea/" class="btn">
             <font-awesome-icon :icon="['fab', 'instagram']" />
           </a>
           <a href="#" class="btn">
@@ -24,7 +24,7 @@
       <div class="box">
         <h3>our location</h3>
         <div class="links">
-          <a href="#">Shekilango, Dar es salaam</a>
+          <a href="#">Lumumba, Dar es salaam</a>
           <a href="#">Mwanza</a>
           <a href="#">Tanga</a>
           <a href="#">Arusha</a>
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <h1 class="credit"> Created by <span> Dullah </span></h1>
+    <h1 class="credit"> Created by <span> BeiPoa </span></h1>
   </section>
 </template>
 

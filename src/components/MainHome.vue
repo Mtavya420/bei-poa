@@ -7,7 +7,9 @@
     </div>
 
     <div class="image">
-      <img src="https://www.91-img.com/gallery_images_uploads/2/9/295097ec6561ac355f1c9fdc29387b6f290531f1.jpg" alt="" style="width: 500px; height: 500px;">
+      
+
+      <img src="/s24ultra.png" alt="" style="width:300px; height:350px;">
     </div>
   </section>
 </template>
